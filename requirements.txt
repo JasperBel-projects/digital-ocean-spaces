@@ -15,7 +15,6 @@ importlib-metadata==4.8.1
 jeepney==0.7.1
 jmespath==0.10.0
 keyring==23.2.1
-mkdir==2020.12.3
 orderdict==2020.12.3
 packaging==21.0
 pkginfo==1.7.1
