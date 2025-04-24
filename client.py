@@ -265,7 +265,7 @@ class Client:
         finally:
             pass
         
-    def upload_file(self, file, destination="", rename=None, space_name=None, extra_args={}):
+    def upload_file(self, file, destination="", filename="", rename=None, space_name=None, extra_args={}):
         """
         Uploads a single file.
         """
@@ -283,18 +283,18 @@ class Client:
 
 
         # Check for rename and make sure it's safe
-        if rename:
-            if Path(rename).suffixes:
-                raise Exception('[Raised]' + cant_replace_file_ext)
-            elif os.path.dirname(rename):
-                raise Exception('[Raised]' + cant_place_path_in_file_name)
-            else:
-                name = rename
+        # if rename:
+        #     if Path(rename).suffixes:
+        #         raise Exception('[Raised]' + cant_replace_file_ext)
+        #     elif os.path.dirname(rename):
+        #         raise Exception('[Raised]' + cant_place_path_in_file_name)
+        #     else:
+                # name = rename
 
         # Make sure destination is marked as a directory
         if destination[-1] != '/':
             destination += '/'
-        destination += name + file_ext
+        destination += filename
 
         try:
             tic = time.perf_counter()
