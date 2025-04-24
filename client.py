@@ -278,7 +278,9 @@ class Client:
         # Get file name and extentions
         basename = os.path.basename(file)
         file_ext = ''.join(Path(basename).suffixes)
-        name = file_ext[-(len(file_ext))]
+        # name = file_ext[-(len(file_ext))]
+        name = Path(basename).stem
+
 
         # Check for rename and make sure it's safe
         if rename:
